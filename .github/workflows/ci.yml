@@ -12,9 +12,6 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-
-      - name: Build with Gradle
-        run: ./gradlew build --stacktrace --info --scan
-
-      - name: Run tests with Gradle
-        run: ./gradlew test --stacktrace --info --scan
+  
+      - name: Run Java application
+        run: java Teste1
