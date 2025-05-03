@@ -14,7 +14,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Compile Java file
-        run: javac Teste1.java
+        run: javac teste1.java
   
       - name: Run Java application
-        run: java Teste1
+        run: java teste1
