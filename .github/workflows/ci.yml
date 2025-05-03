@@ -12,6 +12,9 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+
+      - name: Compile Java file
+        run: javac Teste1.java
   
       - name: Run Java application
         run: java Teste1
