@@ -8,19 +8,21 @@ on:
       - master
 jobs: 
   check-application:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        java-version: [11, 17, 21]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up JDK 21
+      - name: Set up JDK
         uses: actions/setup-java@v2
         with:
-          java-version: '21'
+          java-version: ${{ matrix.java-version }}
+          java-package: jdk
           distribution: 'temurin'
 
-      - name: Compile Java file
-        run: javac teste1.java
-  
       - name: Run Java application
         run: java teste1
